@@ -1,0 +1,134 @@
+/**
+ * @package jpWot
+ * @author Philipp John <info@jplace.de>
+ * @copyright (c) 2014, Philipp John
+ * @license http://www.gnu.org/copyleft/gpl.html GNU v3 see also LICENSE.txt
+ */
+
+footer{
+	background:#ecf0f1;
+	margin-top:2em;
+	padding-top:2em;
+	padding-bottom:2em}
+footer p{
+	color:#7b8a8b;
+	font-size:13px;
+	margin-bottom:0.25em}
+footer #footer-resources{
+	text-align:right}
+footer #footer-resources i{
+	color:#7b8a8b;
+	font-size:28.5px;
+	margin-left:0.5em}
+header{
+	margin-bottom:2em}
+header ul.nav li{
+	margin-bottom:0}
+header .locales a{padding-right:10px}
+body#requirements_checker header h1{
+	margin-bottom:0;margin-top:0}
+body#requirements_checker header h1 span{
+	font-size:120%;opacity:0.7;padding:0 5px}
+#main {
+	padding: 10px;
+	border-style: solid;
+	border-width: 0px 1px 1px 1px;
+	border-color: #ddd;;
+}
+
+.no_succession {
+	margin-bottom: 0px;
+}
+
+#filterarea {
+	margin-bottom: 10px;
+}
+
+#vehicles .vehicles-scrollbox {
+	max-height: 400px;
+	overflow-y: scroll;
+}
+
+#vehicles .vehicle-wrapper {
+	display: inline;
+}
+
+#vehicles .vehicle-wrapper .level {
+	margin-left: 10px;
+	display: inline-block;
+	width: 40px;
+}
+
+.detail_clan_name {
+	margin-right: 5px;
+}
+
+.icon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-top: 1px;
+	line-height: 16px;
+	vertical-align: text-top;
+	background-position: 50% 50%;
+	background-repeat: no-repeat !important;
+	
+}
+
+.icon.ico_de {
+	background: url('../img/flags/de.png');
+}
+
+.icon.ico_en {
+	background: url('../img/flags/gb.png');
+}
+
+.icon.ico_fr {
+	background: url('../img/flags/fr.png');
+}
+
+.icon.ico_tr {
+	background: url('../img/flags/tr.png');
+}
+
+.icon.ico_cz {
+	background: url('../img/flags/cz.png');
+}
+
+.icon.ico_pl {
+	background: url('../img/flags/pl.png');
+}
+
+.icon.ico_es {
+	background: url('../img/flags/es.png');
+}
+
+.icon.ico_tr {
+	background: url('../img/flags/tr.png');
+}
+
+#langSwichter a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#langSwitcher a:hover {
+	text-decoration: none;
+}
+
+#langSwitcher a .icon.inactive {
+	filter: grayscale(60%);
+	filter: url(desaturate.svg#greyscale);
+	filter: gray;
+	-webkit-filter: grayscale(60%);
+	-moz-filter: grayscale(60%);
+	-ms-filter: grayscale(60%);
+	-o-filter: grayscale(60%);
+	-webkit-filter: grayscale(0.6);
+
+	filter: alpha(opacity=60);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+	-moz-opacity:0.6;
+	-khtml-opacity: 0.6;
+	opacity: 0.6;
+}

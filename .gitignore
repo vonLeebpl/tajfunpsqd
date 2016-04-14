@@ -1,3 +1,14 @@
+/app/config/parameters.yml
+/app/bootstrap.php.cache
+/app/cache/*
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+/build/
+/vendor/
+/bin/
+/composer.phar
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

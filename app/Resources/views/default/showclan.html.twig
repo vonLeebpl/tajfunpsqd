@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id %}Search clan{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>{{ clantag }} clan members progress in {{ event.event_name }}</h2>
+
+        {% if clans|length > 0 %}
+
+            <table class="table table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Award</th>
+                        <th>Rank</th>
+                        <th>Fame points</th>
+                        <th>FP to improve</th>
+                        <th>Battles</th>
+                        <th>Battles to award</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for clan in clans %}
+                        <tr>
+                            <td><a href="/show/{{ clan.clan_id }}">{{ clan.tag }}</a></td>
+                            <td>{{ clan.name }}</td>
+                            <td>{{ clan.members_count }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <h3>Sorry, no matches!!</h3>
+        {% endif %}
+    </div>
+
+{% endblock %}
