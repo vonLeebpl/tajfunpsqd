@@ -82,7 +82,18 @@ class EventAccountData
      */
     private $rank;
 
+    private $days_in_clan;
 
+
+
+    /*
+     * get days_in_clan
+     */
+    public function getDaysInClan()
+    {
+        $t = new \DateTime('now');
+        return $t->diff($this->getJoinedAt())->format('%a');
+    }
 
     /**
      * Get id

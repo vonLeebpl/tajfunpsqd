@@ -22,4 +22,14 @@ class EventRepository extends EntityRepository
             ');
 
     }
+
+    public function isActiveEvent()
+    {
+        return ($this->findOneByStatus('ACTIVE')?:false);
+/*        $event = $this->findOneByStatus('ACTIVE');
+        if(!$event)
+            return false;
+        else
+            return $event;*/
+    }
 }

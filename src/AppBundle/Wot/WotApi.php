@@ -486,14 +486,14 @@ Class WotApi
 			}
 		} else {
 			$json = file_get_contents($u);
-			$obj = json_decode($json);
+			$obj = json_decode($json, true);
 
-			switch ($obj->status) {
+			switch ($obj['status']) {
 				case 'ok':
-					return $obj->data;
+					return $obj['data'];
 
 				default:
-					return $obj->error;
+					return $obj['error'];
 			}
 		}
 	}

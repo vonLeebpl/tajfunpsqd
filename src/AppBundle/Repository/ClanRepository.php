@@ -17,12 +17,12 @@ class ClanRepository extends EntityRepository
     {
         $clan = new Clan();
 
-        $clan->setId($data->clan_id);
-        $clan->setTag($data->tag);
-        $clan->setName($data->name);
-        $clan->setMembersCount($data->members_count);
+        $clan->setId($data['clan_id']);
+        $clan->setTag($data['tag']);
+        $clan->setName($data['name']);
+        $clan->setMembersCount($data['members_count']);
         $clan->setLastUpdated(new \DateTime('now'));
-        $clan->setLastEventUpdateDate(new \DateTime('now'));
+        //$clan->setLastEventUpdateDate(new \DateTime('now'));
 
         return $clan;
     }

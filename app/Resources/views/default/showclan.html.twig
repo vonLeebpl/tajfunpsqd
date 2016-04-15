@@ -4,28 +4,40 @@
 
 {% block body %}
     <div class="container">
-        <h2>{{ clantag }} clan members progress in {{ event.event_name }}</h2>
+        <h2>{{ clan.tag }} clan members progress in {{ event.eventName }}</h2>
 
-        {% if clans|length > 0 %}
+        {% if mdata|length > 0 %}
 
-            <table class="table table-condensed table-hover">
+            <table class="table table-condensed">
                 <thead>
                     <tr>
                         <th>Name</th>
                         <th>Award</th>
                         <th>Rank</th>
-                        <th>Fame points</th>
-                        <th>FP to improve</th>
+                        <th>Fame</th>
+                        <th>Fame to award</th>
                         <th>Battles</th>
                         <th>Battles to award</th>
+                        <th>Days in clan</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for clan in clans %}
-                        <tr>
-                            <td><a href="/show/{{ clan.clan_id }}">{{ clan.tag }}</a></td>
-                            <td>{{ clan.name }}</td>
-                            <td>{{ clan.members_count }}</td>
+                    {% for m in mdata %}
+                        <tr     {% if m.rank <= 6000 and m.rank > 0 %}
+                                    class="success"
+                                {% elseif m.rank > 6000 and m.rank <= 8000 %}
+                                    class="info"
+                                {% elseif m.rank > 8000 %} class="danger"
+                                {% else %} class="danger" {% endif %}
+                        >
+                            <td>{{ m.accountName }}</td>
+                            <td>{{ m.awardLevel }}</td>
+                            <td>{{ m.rank }}</td>
+                            <td>{{ m.famePoints }}</td>
+                            <td>{{ m.famePointsToImproveAward }}</td>
+                            <td>{{ m.battles }}</td>
+                            <td>{{ m.battlesToAward }}</td>
+                            <td>{{ m.daysInClan }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>

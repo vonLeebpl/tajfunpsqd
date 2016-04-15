@@ -24,6 +24,8 @@ abstract class WotConfig
 	 */
 	public static $app_id = 'bf50bd80740ecfaa1c587f5efc3772b9';
 
+	public static $refresh_interval = 300; //secs
+
     /**
      * @var string
      * test data
@@ -61,7 +63,7 @@ abstract class WotConfig
                 'events.fame_points',
                 'events.fame_points_to_improve_award',
                 'events.rank',
-                'events.caln_id',
+                'events.clan_id',
             ),
         ),
 		'accounts' => array (
