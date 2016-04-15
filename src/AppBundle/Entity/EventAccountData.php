@@ -27,6 +27,7 @@ class EventAccountData
 
     /**
      * @ORM\ManyToOne(targetEntity="Clan", inversedBy="members")
+     * @ORM\JoinColumn(name="clan_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $clan;
 
