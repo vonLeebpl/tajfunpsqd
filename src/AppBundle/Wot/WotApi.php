@@ -40,6 +40,8 @@ Class WotApi
 	 */
 	protected $_limit = 0;
 
+	protected static $cnt = 0;
+
 	/**
 	 * @param string $region
 	 * @param string $lang
@@ -76,6 +78,8 @@ Class WotApi
 		$this->app_id = $app_id;
 		$this->lang = $lang;
 		$this->_cache = null;
+
+		self::$cnt++;
 	}
 
 	/**
@@ -226,7 +230,7 @@ Class WotApi
                 throw new InvalidArgumentException('Invalid value for parameter $request given: ' . $request);
         }
 
-        $u .= 'application_id='.$this->app_id.'&fields='.implode(',', $fields).'&language='.$this->lang;
+        $u .= 'application_id='.$this->app_id[self::$cnt % 3].'&fields='.implode(',', $fields).'&language='.$this->lang;
 
         if($request === 'search' && !empty($this->_limit)) {
             $u .= '&limit='.(int)$this->_limit;
@@ -267,7 +271,7 @@ Class WotApi
 				throw new InvalidArgumentException('Invalid value for parameter $request given: '.$request);
 		}
 
-		$u .= '&application_id='.$this->app_id.'&fields='.implode(',', $fields).'&language='.$this->lang;
+		$u .= '&application_id='.$this->app_id[self::$cnt % 3].'&fields='.implode(',', $fields).'&language='.$this->lang;
 
 		if($request === 'search' && !empty($this->_limit)) {
 			$u .= '&limit='.(int)$this->_limit;

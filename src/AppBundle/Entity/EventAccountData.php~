@@ -27,6 +27,7 @@ class EventAccountData
 
     /**
      * @ORM\ManyToOne(targetEntity="Clan", inversedBy="members")
+     * @ORM\JoinColumn(name="clan_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $clan;
 
@@ -82,7 +83,18 @@ class EventAccountData
      */
     private $rank;
 
+    private $days_in_clan;
 
+
+
+    /*
+     * get days_in_clan
+     */
+    public function getDaysInClan()
+    {
+        $t = new \DateTime('now');
+        return $t->diff($this->getJoinedAt())->format('%a');
+    }
 
     /**
      * Get id

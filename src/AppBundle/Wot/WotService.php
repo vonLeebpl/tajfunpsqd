@@ -99,9 +99,6 @@ class WotService
             $this->em->persist($e);
         }
 
-        $rc = $this->em->getRepository('AppBundle:RefreshControler')->findOneById(1);
-        $rc->setEventRefresh(new \DateTime('now'));
-
         $this->em->flush();
     }
 

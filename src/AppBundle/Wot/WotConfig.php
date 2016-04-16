@@ -22,16 +22,11 @@ abstract class WotConfig
 	/**
 	 * @var string
 	 */
-	public static $app_id = 'bf50bd80740ecfaa1c587f5efc3772b9';
+	public static $app_id = [ 	0 => 'bf50bd80740ecfaa1c587f5efc3772b9',
+								1 => '2ccca06d783770bbd7b7c35670d3f5b9',
+								2 => 'f523731f069c8df938ef6d01c66efddd'];
 
-	public static $refresh_interval = 300; //secs
-
-    /**
-     * @var string
-     * test data
-     */
-	public static $event_id = 'black_gold_third_step';
-	public static $front_id = '1511_eu_c4event1_front_1';
+	public static $refresh_interval = 600; //secs
 
 	/**
 	 * @var string
